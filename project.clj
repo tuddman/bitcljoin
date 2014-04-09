@@ -1,4 +1,4 @@
-(defproject bitcljoin "0.4.0"
+(defproject bitcljoin "0.4.2"
   :description "BitCoin library for Clojure"
   :dependencies [
     [org.clojure/clojure "1.5.1"]
@@ -7,5 +7,6 @@
     [lamina "0.5.0"]
     [bux "0.2.1"]]
   ;; :jvm-opts ["-Xmx1g"]
-  ;;:profiles { :dev {:dependencies [[ch.qos.logback/logback-classic "1.0.7"]]}}
+  :profiles { :dev { :dependencies [[postgresql "9.1-901.jdbc4"]
+                                    [ch.qos.logback/logback-classic "1.0.7"]]}}
   )
