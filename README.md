@@ -15,7 +15,7 @@ So until then you need to clone their repo and install it locally using these in
 ```bash
 git clone https://code.google.com/p/bitcoinj/ bitcoinj
 cd bitcoinj
-git reset --hard 410d4547a7dd20745f637313ed54d04d08d28687    # Force yourself to the 0.11 release
+git reset --hard 2733004e71cc  # to get 0.11.2    Otherwise it grabs 0.12-SNAPSHOT and doesn't work quite right... yet.
 mvn install
 ```
 
