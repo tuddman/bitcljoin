@@ -1,4 +1,4 @@
-(defproject bitcljoin "0.4.2-tuddman-SNAPSHOT"
+(defproject bitcljoin "0.4.3-tuddman-SNAPSHOT"
   :description "BitCoin library for Clojure"
   :dependencies [
     [org.clojure/clojure "1.6.0"]
@@ -10,9 +10,6 @@
   ;; :jvm-opts ["-Xmx1g"]
   :profiles { :dev { :dependencies [[postgresql "9.1-901.jdbc4"]
                                     [ch.qos.logback/logback-classic "1.0.7"]]}}
-
   :aot [bitcoin.walletappkit]
-;  :aot [com.google.bitcoin.kits.WalletAppKit]
-
-  )
+ )
 

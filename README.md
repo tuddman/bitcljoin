@@ -13,7 +13,7 @@ You first need a copy of bitcoinj in your local maven repository. Unfortunately 
 So until then you need to clone their repo and install it locally using these instructions from their [Using Maven](http://code.google.com/p/bitcoinj/wiki/UsingMaven) page:
 
 ```bash
-git clone https://code.google.com/p/bitcoinj/ bitcoinj
+git clone https://github.com/bitcoinj/bitcoinj
 cd bitcoinj
 git reset --hard 2733004e71cc  # to get 0.11.2    Otherwise it grabs 0.12-SNAPSHOT and doesn't work quite right... yet.
 mvn install
@@ -34,7 +34,7 @@ I had to edit ~/.m2/repository/bitcljoin/bitcljoin/0.4.2/bitcljoin-0.4.2.pom to 
 Add the following to your project.clj
 
 ```clojure
-[bitcljoin "0.4.2"]
+[bitcljoin "0.4.3"]
 ```
 
 Use library:

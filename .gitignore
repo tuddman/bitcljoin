@@ -8,6 +8,8 @@
 /.lein-deps-sum
 /test.wallet
 
+*.DS_Store
+
 *.db
 
 *.blockchain
