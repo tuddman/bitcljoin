@@ -17,7 +17,7 @@
 (defn broadcast-txs
   "Returns a of new transactions being broadcast (not yet in the blockchain)"
   ([pg]
-   (let [ch (lamina/channel)]
+   (let [ch (lamina/permanent-channel)]
      (btc/on-tx-broadcast pg (fn [_ tx] (lamina/enqueue ch tx)))
      ch))
   ([] (broadcast-txs @btc/current-pg)))
@@ -25,10 +25,8 @@
 
 (defn txs-for
   "Creates a channel for transactions sent to a specific address
-
-  In it's single parameter form it sets up a broadcast-tx-channel of unconfirmed transactions.
-
-  for confirmed transactions pass the channel in as the first argument"
+   in it's single parameter form it sets up a broadcast-tx-channel of unconfirmed transactions.
+   For confirmed transactions pass the channel in as the first argument."
 
   ([channel address]
     (lamina/filter* #((btc/to-addresses %) address) channel))
@@ -38,10 +36,8 @@
 
 (defn wallet-txs
   "Creates a channel for transactions sent to a specific address
-
-  In it's single parameter form it sets up a broadcast-tx-channel of unconfirmed transactions.
-
-  for confirmed transactions pass the channel in as the first argument"
+   in it's single parameter form it sets up a broadcast-tx-channel of unconfirmed transactions.
+   For confirmed transactions pass the channel in as the first argument"
 
   ([channel wallet]
     (lamina/filter* #(btc/for-me? % wallet) channel))
@@ -52,7 +48,7 @@
 (defn confirmed-txs
   "Returns a of new transactions entering the blockchain"
   ([bc]
-   (let [ch (lamina/channel)]
+   (let [ch (lamina/permanent-channel)]
      (.addListener bc (proxy
                         [com.google.bitcoin.core.BlockChainListener][]
                         (isTransactionRelevant [tx] true)
@@ -65,7 +61,7 @@
 (defn blocks
   "Returns a of new blocks entering the blockchain"
   ([bc]
-   (let [ch (lamina/channel)]
+   (let [ch (lamina/permanent-channel)]
      (.addListener bc (proxy
                         [com.google.bitcoin.core.BlockChainListener][]
                         (isTransactionRelevant [tx] true)

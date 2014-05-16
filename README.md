@@ -19,6 +19,16 @@ git reset --hard 2733004e71cc  # to get 0.11.2    Otherwise it grabs 0.12-SNAPSH
 mvn install
 ```
 
+I had to edit ~/.m2/repository/bitcljoin/bitcljoin/0.4.2/bitcljoin-0.4.2.pom to change bitcoinj to 0.11.2
+```bash
+...
+    <dependency>
+      <groupId>com.google</groupId>
+      <artifactId>bitcoinj</artifactId>
+      <version>0.11.2</version>
+    </dependency>
+```
+
 ## Usage
 
 Add the following to your project.clj
