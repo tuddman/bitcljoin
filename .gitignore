@@ -8,7 +8,7 @@
 /.lein-deps-sum
 /test.wallet
 
-*.DS_Store
+.DS_Store
 
 *.db
 
